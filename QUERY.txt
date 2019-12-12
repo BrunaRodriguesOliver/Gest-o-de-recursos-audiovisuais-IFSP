@@ -1,0 +1,95 @@
+Inserir ACESSORIOS:
+INSERT INTO ACESSORIOS (id_acessorio, patrimonio, descricao, quantidade) VALUES(010, 001012, 'extensao', 10 );
+
+INSERT INTO ACESSORIOS (id_acessorio, patrimonio, descricao, quantidade) VALUES(011, 001013, 'tela projetor', 5 );
+
+INSERT INTO ACESSORIOS (id_acessorio, patrimonio, descricao, quantidade) VALUES(012, 001014, 'regua de rack', 5 );
+
+INSERT INTO ACESSORIOS (id_acessorio, patrimonio, descricao, quantidade) VALUES(013, 001015, 'controle de projetor', 5 );
+
+
+======================================================================================================================
+Inserir CRA
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (11111, 1, 'Adolfo', 'Pinheiro');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (22222, 2, 'Bruno', 'Carvalho');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (33333, 3, 'Carlos', 'Gomes');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (44444, 4, 'Daniela', 'Ferreira');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (55555, 5, 'Evandro', 'Rocha');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (66666, 6, 'Fabiola', 'Mendes');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (77777, 2, 'Gabriela', 'Paes');
+
+
+INSERT INTO CRA(pront_CRA, id_setor, nome, sobrenome) VALUES (88888, 8, 'Heitor', 'Fernandes');
+
+========================================================================================================================
+Insercao PROFESSOR:
+INSERT INTO PROFESSOR (pront_prof, nome, sobrenome, id_setor) VALUES ('SP11111', 'Adolfo', 'Pinheiro', 1);
+
+
+INSERT INTO PROFESSOR (pront_prof, nome, sobrenome, id_setor) VALUES ('SP22222', 'Bruno', 'Carvalhoo', 2);
+
+
+INSERT INTO PROFESSOR (pront_prof, nome, sobrenome, id_setor) VALUES ('SP33333', 'Carlos', 'Gomes', 2);
+
+
+INSERT INTO PROFESSOR (pront_prof, nome, sobrenome, id_setor) VALUES ('SP44444', 'Daniela', 'Ferreira', 2);
+
+========================================================================================================================
+inserir RECURSO
+INSERT INTO RECURSOS (patrimonio, descricao, condicao, id_acessorio, disponibilidade)
+VALUES (10556, 'datashow', 'em bom estado', 010, 1);
+
+INSERT INTO RECURSOS (patrimonio,memorando, descricao, condicao, id_acessorio, disponibilidade)
+VALUES (10557, 'solicito à coordenação setor de audiovisuais', 'AUD_IVO', 'com palco', 010, 1);
+
+
+INSERT INTO RECURSOS (patrimonio, descricao, condicao, id_acessorio, disponibilidade)
+VALUES (10558, 'fita de video VHS', 'manutencao em dia', 012, 1);
+
+
+INSERT INTO RECURSOS (patrimonio, descricao, condicao, id_acessorio, disponibilidade)
+VALUES (10559, 'DVD(midia)', 'manutencao em dia', 012, 1);
+
+
+INSERT INTO RECURSOS (patrimonio, memorando, descricao, condicao, id_acessorio, disponibilidade)
+VALUES (10560, 'solicito à coordenação setor de audiovisuais', 'radio', 'precisa de pilhas', 012, 1);
+
+
+
+========================================================================================================================
+inserir SALAS
+INSERT INTO SALA (id_sala, condicao, turno, disponibilidade) VALUES('LAB_01', 1, 'noturno', 1 );
+
+INSERT INTO SALA (id_sala, condicao, turno, disponibilidade) VALUES('LAB_02', 1, 'noturno', 1 );
+
+INSERT INTO SALA (id_sala, condicao, turno, disponibilidade) VALUES('LAB_03', 1, 'noturno',  1 );
+
+INSERT INTO SALA (id_sala, condicao, turno, disponibilidade) VALUES('sala_104', 1, 'noturno', 1 );
+
+INSERT INTO SALA (id_sala, condicao, turno, disponibilidade) VALUES('sala_105', 1, 'noturno', 1 );
+
+
+========================================================================================================================
+inserir SETOR
+
+INSERT INTO SETOR (id_setor, nome_setor, ramal) VALUES (1, 'Secretaria', 200);
+
+INSERT INTO SETOR (id_setor, nome_setor, ramal) VALUES (2, 'Diretoria', 201);
+
+INSERT INTO SETOR (id_setor, nome_setor, ramal) VALUES (3, 'Biblioteca', 202);
+
+INSERT INTO SETOR (id_setor, nome_setor, ramal) VALUES (4, 'Administração', 203);
+
+INSERT INTO SETOR (id_setor, nome_setor, ramal) VALUES (5, 'Gestão de Pessoas', 204);
