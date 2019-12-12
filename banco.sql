@@ -1,0 +1,98 @@
+CREATE DATABASE BD_IFSP;
+USE BD_IFSP;
+
+
+CREATE TABLE CRA (
+  pront_cra INT NOT NULL PRIMARY KEY,
+  nome VARCHAR(15) NOT NULL,
+  sobrenome VARCHAR(15) NOT NULL,
+  id_setor INT NOT NULL
+)
+
+
+CREATE TABLE SALA (
+  id_sala VARCHAR(15) NOT NULL PRIMARY KEY,
+  condicao BIT NOT NULL,
+  turno VARCHAR(10) NOT NULL,
+  disponibilidade BIT NOT NULL
+)
+
+CREATE TABLE PROFESSOR (
+  pront_prof VARCHAR(9) NOT NULL PRIMARY KEY,
+  nome VARCHAR(15) NOT NULL,
+  sobrenome VARCHAR(15) NOT NULL,
+  id_setor INT NOT NULL,
+ )
+CREATE TABLE ACESSORIOS (
+  id_acessorio INT NOT NULL PRIMARY KEY,
+  patrimonio INT NOT NULL,
+  descricao VARCHAR(20) NOT NULL,
+  quantidade INT NOT NULL
+)
+
+CREATE TABLE RECURSOS (
+  patrimonio INT NOT NULL PRIMARY KEY,
+  memorando VARCHAR(50),
+  descricao VARCHAR(20) NOT NULL,
+  condicao VARCHAR(20) NOT NULL,
+  disponibilidade BIT NOT NULL,
+	id_acessorio INT NOT NULL
+)
+
+
+CREATE TABLE RESERVA (
+  pront_prof VARCHAR(9) NOT NULL,
+  pront_cra INT NOT NULL,
+  patrimonio INT NOT NULL,
+  id_sala VARCHAR(15) NOT NULL,
+  id_acessorio INT NOT NULL,
+  id_reserva INT NOT NULL PRIMARY KEY,
+  data_reserva DATE NOT NULL,
+  hora_reserva DATE NOT NULL,
+  data_uso DATE NOT NULL,
+  hora_uso DATE NOT NULL,
+  data_devolucao DATE NOT NULL,
+  hora_devolucao DATE NOT NULL,
+  obs VARCHAR(25) NOT NULL,
+  visto_prof BIT NOT NULL,
+  visto_cra BIT NOT NULL 
+)
+
+
+CREATE TABLE SETOR (
+  id_setor INT NOT NULL PRIMARY KEY,
+  nome_setor VARCHAR(15) NOT NULL,
+  ramal INT NOT NULL
+)
+
+
+
+
+ALTER TABLE CRA ADD CONSTRAINT fk_setor3
+FOREIGN KEY (id_setor) 
+REFERENCES SETOR (id_setor);
+
+ALTER TABLE PROFESSOR ADD CONSTRAINT fk_setor2
+FOREIGN KEY (id_setor) 
+REFERENCES SETOR (id_setor);
+
+ALTER TABLE RECURSOS ADD CONSTRAINT fk_acessorio
+FOREIGN KEY (id_acessorio) 
+REFERENCES ACESSORIOS (id_acessorio);
+
+ALTER TABLE RESERVA ADD CONSTRAINT fk_pront_prof
+FOREIGN KEY (pront_prof) 
+REFERENCES 	PROFESSOR (pront_prof);
+
+ALTER TABLE RESERVA ADD CONSTRAINT fk_pront_cra
+FOREIGN KEY (pront_cra) 
+REFERENCES 	CRA (pront_cra);
+
+ALTER TABLE RESERVA ADD CONSTRAINT fk_patrimonio FOREIGN KEY (patrimonio) 
+REFERENCES 	RECURSOS (patrimonio);
+
+ALTER TABLE RESERVA ADD CONSTRAINT fk_id_acessorio FOREIGN KEY (id_acessorio) 
+REFERENCES 	ACESSORIOS (id_acessorio);
+
+ALTER TABLE RESERVA ADD CONSTRAINT fk_id_sala FOREIGN KEY (id_sala) 
+REFERENCES 	SALA (id_sala);
